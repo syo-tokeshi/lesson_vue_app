@@ -1,5 +1,7 @@
 # lesson_vue_app
 
+毎回このリポジトリを使って、vueの練習をする
+
 ## Project setup
 ```
 npm install
