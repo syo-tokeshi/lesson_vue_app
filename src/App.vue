@@ -1,83 +1,15 @@
 <template>
-  <div v-app>
-    <v-form v-model="valid">
-      <v-container>
-        <v-row>
-          <v-col
-              cols="12"
-              md="4"
-          >
-            <v-text-field
-                v-model="firstname"
-                :rules="nameRules"
-                :counter="10"
-                label="First name"
-                required
-            ></v-text-field>
-          </v-col>
-
-          <v-col
-              cols="12"
-              md="4"
-          >
-            <v-text-field
-                v-model="lastname"
-                :rules="nameRules"
-                :counter="10"
-                label="Last name"
-                required
-            ></v-text-field>
-          </v-col>
-
-          <v-col
-              cols="12"
-              md="4"
-          >
-            <v-text-field
-                v-model="email"
-                :rules="emailRules"
-                label="E-mail"
-                required
-            ></v-text-field>
-          </v-col>
-        </v-row>
-        <v-app>
-          <v-btn color="primary" @click="reverse">change</v-btn>
-          <h3>{{firstname}}</h3>
-        </v-app>
-
-
-      </v-container>
-    </v-form>
+  <div id="app">
+    <Board></Board>
   </div>
-
 </template>
 
-
 <script>
+import Board from "@/components/Board";
 export default {
-  data: () => ({
-    valid: false,
-    firstname: '',
-    lastname: '',
-    nameRules: [
-      v => !!v || 'Name is required',
-      v => v.length <= 10 || 'Name must be less than 10 characters',
-    ],
-    email: '',
-    emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+/.test(v) || 'E-mail must be valid',
-    ],
-  }),
-  methods: {
-    reverse() {
-      this.firstname = this.firstname.split("").reverse().join("")
-    }
-  },
+  name: 'app',
+  components: {
+    Board
+  }
 }
 </script>
-
-<style>
-
-</style>
