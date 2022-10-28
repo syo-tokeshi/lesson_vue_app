@@ -14,10 +14,10 @@
     >
       Add
     </button>
-    <ul>
-      <li v-for="list in lists">{{list}}
-        <br><br></li>
-    </ul>
+<!--    <ul>-->
+<!--      <li v-for="list in lists">{{list}}-->
+<!--        <br><br></li>-->
+<!--    </ul>-->
   </form>
   <!-- ★ここまで追記 -->
 </template>
