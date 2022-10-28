@@ -32,11 +32,17 @@ const store = new Vuex.Store({
     mutations: {
       addlist(state, payload) {
         state.lists.push({title: payload.title,card:[]})
-      }
+      },
+      removelist(state, payload) {
+        state.lists.splice(payload.listindex,1)
+      },
     },
     actions: {
       addlist({commit}, payload) {
         commit('addlist', payload);
+      },
+      removelist({commit}, payload) {
+        commit('removelist', payload);
       }
     },
   modules: {

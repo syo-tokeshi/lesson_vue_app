@@ -2,7 +2,7 @@
   <!-- ★ここから追記 -->
   <div class="list">
     <div class="listheader">
-      <p class="list-title">{{ title }}</p>
+      <p class="list-title"><input v-model=" title "></p>
       <p class="list-title">{{ listIndex }}</p>
       <div class="deletelist" @click="removeList">×</div>
     </div>
