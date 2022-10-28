@@ -84,7 +84,7 @@ main {
     background-color: green;
 }
 .addable .add-button {
-    background-color: #00d78f;
+    background-color: red;
     pointer-events: auto;
     cursor: pointer;
 }
