@@ -81,7 +81,7 @@ main {
 }
 
 .active .text-input {
-    background-color: #fff;
+    background-color: green;
 }
 .addable .add-button {
     background-color: #00d78f;

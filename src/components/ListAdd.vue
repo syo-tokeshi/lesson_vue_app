@@ -1,10 +1,12 @@
 <template>
   　<!-- ★ここから追記 -->
-  <form class="addlist" @submit.prevent="addList">
+  <form :class="classList" @submit.prevent="addList">
     <input v-model="title"
            type="text"
            class="text-input"
            placeholder="Add new list"
+           @focusin="startEdting"
+           @focusout="finishEditing"
     >
     <button type="submit" class="add-button">
       Add
@@ -22,6 +24,7 @@ export default {
   data() {
     return {
       title: "",
+      isEditing: false,
       // stateから取る場合
       lists: this.$store.state.lists
       // localstrageからデータを取る場合
@@ -31,6 +34,21 @@ export default {
   methods: {
     addList() {
       this.$store.dispatch("addlist",{title: this.title})
+    },
+    startEdting: function (){
+      this.isEditing = true
+    },
+    finishEditing: function (){
+      this.isEditing = false
+    },
+  },
+  computed: {
+    classList() {
+      const classList = ["addlist"]
+      if (this.isEditing){
+        classList.push("active")
+      }
+      return classList
     }
   },
 }
