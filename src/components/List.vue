@@ -6,12 +6,19 @@
       <p class="list-title">{{ listIndex }}</p>
       <div class="deletelist" @click="removeList">×</div>
     </div>
+    <CardAdd :list-index="listIndex"/>
+
   </div>
   <!-- ★ここまで追記 -->
 </template>
 
 <script>
+import CardAdd from "@/components/CardAdd";
 export default {
+  components: {
+    CardAdd
+  },
+
   props: {
     title: {
       type: String,
