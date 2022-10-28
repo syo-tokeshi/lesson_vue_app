@@ -9,6 +9,10 @@
     <button type="submit" class="add-button">
       Add
     </button>
+    <ul>
+      <li v-for="list in lists">{{list}}
+        <br><br></li>
+    </ul>
   </form>
   <!-- ★ここまで追記 -->
 </template>
@@ -17,7 +21,11 @@
 export default {
   data() {
     return {
-      title: ""
+      title: "",
+      // stateから取る場合
+      lists: this.$store.state.lists
+      // localstrageからデータを取る場合
+      // lists: JSON.parse(localStorage.getItem("trello-lists"))
     }
   },
   methods: {
